@@ -141,10 +141,10 @@ object UserBasedCF {
             math.abs(row._1._3 - row._2)
         })
         val RMSE = math.sqrt(diff.map(x=>{x * x}).mean())
-        var range1 = diff.filter{ case (diff) => (diff)>=0 && diff<1}.count()
-        var range2 = diff.filter{ case (diff) => (diff)>=1 && diff<2}.count()
-        var range3 = diff.filter{ case (diff) => (diff)>=2 && diff<3}.count()
-        var range4 = diff.filter{ case (diff) => (diff)>=3 && diff<4}.count()
+        var range1 = diff.filter{ case (diff) => diff>=0 && diff<1}.count()
+        var range2 = diff.filter{ case (diff) => diff>=1 && diff<2}.count()
+        var range3 = diff.filter{ case (diff) => diff>=2 && diff<3}.count()
+        var range4 = diff.filter{ case (diff) => diff>=3 && diff<4}.count()
         var range5 = diff.filter{ case (diff) => diff>=4}.count()
 
         // write out result
